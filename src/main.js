@@ -6,11 +6,21 @@ import router from './router/index.js'
 import store from './store/index'
 import axios from 'axios'
 import MintUI from 'mint-ui'
+import VueLazyLoad from 'vue-lazyload'
+import FastClick from 'fastclick'
+import 'lib-flexible'
+
 
 import 'mint-ui/lib/style.css'
 
 Vue.use(MintUI)
-import 'lib-flexible'
+Vue.use(VueLazyLoad,{
+    error:'./assets/img/error.jpg',
+    loading:'./assets/img/loading.jpg'
+})
+  
+FastClick.attach(document.body);
+
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false
 
